@@ -17,6 +17,7 @@ function setState(channel, value) {
 
 function clear() {
 	states = new Array();
+	outlet(0, "clear", "all");
 }
 
 function sendState() {
