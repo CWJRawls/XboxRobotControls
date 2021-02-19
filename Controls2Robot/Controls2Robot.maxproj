@@ -2,8 +2,8 @@
 	"name" : "Controls2Robot",
 	"version" : 1,
 	"creationdate" : 3696502622,
-	"modificationdate" : 3696502636,
-	"viewrect" : [ 25.0, 70.0, 300.0, 500.0 ],
+	"modificationdate" : 3696516186,
+	"viewrect" : [ 25.0, 79.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -14,6 +14,14 @@
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+
+		}
+,
+		"code" : 		{
+			"StateMonitor.js" : 			{
+				"kind" : "javascript",
+				"local" : 1
 			}
 
 		}
