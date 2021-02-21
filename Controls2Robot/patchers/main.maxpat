@@ -1793,7 +1793,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"items" : [ "Xbox Controller", ",", "testing controller", ",", "new preset" ],
+									"items" : [ "Xbox Controller", ",", "Logitech Controller" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2365,14 +2365,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 749.0, 605.0, 150.0, 22.0 ],
-					"restore" : [ 1.0 ],
+					"patching_rect" : [ 749.0, 605.0, 153.0, 22.0 ],
 					"saved_object_attributes" : 					{
+						"initial" : [ 0.8 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr speedlimit @intial 0.8",
+					"text" : "pattr speedlimit @initial 0.8",
 					"varname" : "speedlimit"
 				}
 
@@ -5127,7 +5127,7 @@
 					"patching_rect" : [ 604.0, 693.0, 225.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.5, 427.0, 252.0, 20.0 ],
-					"text" : "Speed Limit: 100%",
+					"text" : "Speed Limit: 80%",
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textjustification" : 1
 				}
