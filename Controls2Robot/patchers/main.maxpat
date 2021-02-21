@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 163.0, 108.0, 291.0, 670.0 ],
+		"rect" : [ 163.0, 108.0, 294.0, 690.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,6 +45,80 @@
 					"fontface" : 1,
 					"fontlink" : 1,
 					"fontsize" : 14.0,
+					"id" : "obj-20",
+					"ignoreclick" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 258.0, 665.0, 31.572265625, 23.640625 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 257.0, 664.0, 31.572265625, 23.640625 ],
+					"text" : "10",
+					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.996078431372549, 0.0, 0.0, 1.0 ],
+					"fontface" : 1,
+					"fontlink" : 1,
+					"fontsize" : 18.0,
+					"id" : "obj-19",
+					"ignoreclick" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 59.0, 93.9453125, 21.994140625, 28.109375 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 234.0, 658.890625, 21.994140625, 28.109375 ],
+					"text" : "!",
+					"textoncolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 176.0, 860.0, 52.0, 22.0 ],
+					"text" : "gate 1 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "textbutton",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 30.0, 812.0, 100.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 6.0, 664.0, 226.0, 23.0 ],
+					"text" : "Enable Network Output",
+					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"texton" : "Disable Network Output",
+					"textoncolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"usetextovercolor" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.880169, 0.755396, 0.471904, 1.0 ],
+					"fontface" : 1,
+					"fontlink" : 1,
+					"fontsize" : 14.0,
 					"id" : "obj-225",
 					"ignoreclick" : 1,
 					"maxclass" : "textbutton",
@@ -54,7 +128,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 264.0, 639.359375, 23.7861328125, 23.640625 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 261.0, 640.0, 23.7861328125, 23.640625 ],
+					"presentation_rect" : [ 261.0, 633.0, 23.7861328125, 23.640625 ],
 					"text" : "9",
 					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
@@ -5658,7 +5732,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"items" : [ "Magic Keyboard with Numeric Keypad", ",", "Magic Keyboard with Numeric Keypad 2", ",", "Xbox Wireless Controller", ",", "Magic Keyboard with Numeric Keypad 3", ",", "Connor Rawls’s Mouse", ",", "Yeti Stereo Microphone", ",", "MIDI Mix" ],
+					"items" : [ "Magic Keyboard with Numeric Keypad", ",", "Magic Keyboard with Numeric Keypad 2", ",", "Magic Keyboard with Numeric Keypad 3", ",", "Connor Rawls’s Mouse", ",", "Yeti Stereo Microphone", ",", "MIDI Mix" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6303,6 +6377,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-70", 3 ],
 					"source" : [ "obj-71", 0 ]
 				}
@@ -6310,7 +6391,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-134", 0 ],
+					"destination" : [ "obj-8", 1 ],
 					"source" : [ "obj-72", 0 ]
 				}
 
@@ -6326,6 +6407,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-73", 1 ],
 					"source" : [ "obj-75", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-134", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
