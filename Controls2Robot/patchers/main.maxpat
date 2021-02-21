@@ -251,7 +251,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "read" ],
+					"outlettype" : [ "storenext" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -263,7 +263,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 594.0, 114.0, 341.0, 128.0 ],
+						"rect" : [ 594.0, 114.0, 349.0, 131.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -293,6 +293,30 @@
 						"assistshowspatchername" : 0,
 						"title" : "Preset Controls",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 461.0, 202.0, 54.0, 22.0 ],
+									"text" : "sel done"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 424.0, 127.0, 29.5, 22.0 ],
+									"text" : "t l l"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
@@ -1564,7 +1588,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 453.0, 457.0, 143.0, 22.0 ],
+									"patching_rect" : [ 447.0, 457.0, 143.0, 22.0 ],
 									"text" : "loadmess getslotnamelist"
 								}
 
@@ -1624,7 +1648,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 486.5, 219.0, 51.0, 22.0 ],
+									"patching_rect" : [ 461.0, 247.0, 51.0, 22.0 ],
 									"text" : "zl group"
 								}
 
@@ -1769,7 +1793,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"items" : [ "Xbox Controller", ",", "Logitech Controller" ],
+									"items" : [ "Xbox Controller", ",", "testing controller", ",", "new preset" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1830,13 +1854,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-109", 0 ],
-									"source" : [ "obj-114", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-132", 0 ],
 									"source" : [ "obj-114", 1 ]
 								}
@@ -1844,7 +1861,14 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-124", 0 ],
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-114", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
 									"source" : [ "obj-116", 0 ]
 								}
 
@@ -1916,6 +1940,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-157", 0 ],
 									"source" : [ "obj-141", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-109", 0 ],
+									"source" : [ "obj-15", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-109", 1 ],
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -2004,6 +2042,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-180", 0 ],
 									"source" : [ "obj-179", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-124", 0 ],
+									"source" : [ "obj-18", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-124", 0 ],
+									"source" : [ "obj-18", 0 ]
 								}
 
 							}
@@ -2314,7 +2366,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 749.0, 605.0, 150.0, 22.0 ],
-					"restore" : [ 0.800000011920929 ],
+					"restore" : [ 1.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -5075,7 +5127,7 @@
 					"patching_rect" : [ 604.0, 693.0, 225.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.5, 427.0, 252.0, 20.0 ],
-					"text" : "Speed Limit: 80%",
+					"text" : "Speed Limit: 100%",
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"textjustification" : 1
 				}
@@ -5606,7 +5658,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"items" : [ "Magic Keyboard with Numeric Keypad", ",", "Magic Keyboard with Numeric Keypad 2", ",", "Magic Keyboard with Numeric Keypad 3", ",", "Connor Rawls’s Mouse", ",", "Yeti Stereo Microphone", ",", "MIDI Mix" ],
+					"items" : [ "Magic Keyboard with Numeric Keypad", ",", "Magic Keyboard with Numeric Keypad 2", ",", "Xbox Wireless Controller", ",", "Magic Keyboard with Numeric Keypad 3", ",", "Connor Rawls’s Mouse", ",", "Yeti Stereo Microphone", ",", "MIDI Mix" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6350,8 +6402,8 @@
 			}
 , 			{
 				"name" : "controls.json",
-				"bootpath" : "/Volumes/Seagate Backup Plus Drive/XboxRobotControls/Controls2Robot",
-				"patcherrelativepath" : "..",
+				"bootpath" : "/Volumes/Seagate Backup Plus Drive/XboxRobotControls/Controls2Robot/data",
+				"patcherrelativepath" : "../data",
 				"type" : "JSON",
 				"implicit" : 1
 			}
