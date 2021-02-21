@@ -4,16 +4,31 @@
 		"slots" : 		{
 			"1" : 			{
 				"id" : 1,
-				"name" : "Xbox Controller (Bluetooth)",
+				"name" : "Xbox Controller",
 				"data" : 				{
 					"leftjoy" : [ 24 ],
 					"rightjoy" : [ 26 ],
 					"min" : [ 0 ],
 					"range" : [ 65535 ],
 					"invert" : [ 1 ],
-					"u066005740" : [ 0 ],
 					"button" : [ 7 ],
 					"speedlimit" : [ 0.800000011920929 ],
+					"deadzone" : [ 0.1 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"name" : "Logitech Controller",
+				"data" : 				{
+					"leftjoy" : [ 11 ],
+					"rightjoy" : [ 12 ],
+					"min" : [ 0 ],
+					"range" : [ 255 ],
+					"invert" : [ 1 ],
+					"button" : [ 2 ],
+					"speedlimit" : [ 1.0 ],
 					"deadzone" : [ 0.1 ]
 				}
 
