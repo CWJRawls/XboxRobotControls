@@ -2,7 +2,7 @@
 	"name" : "Controls2Robot",
 	"version" : 1,
 	"creationdate" : 3696502622,
-	"modificationdate" : 3696516186,
+	"modificationdate" : 3696707136,
 	"viewrect" : [ 25.0, 79.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -22,6 +22,37 @@
 			"StateMonitor.js" : 			{
 				"kind" : "javascript",
 				"local" : 1
+			}
+
+		}
+,
+		"data" : 		{
+			"controls.json" : 			{
+				"kind" : "json",
+				"local" : 1
+			}
+
+		}
+,
+		"other" : 		{
+			"appicon.icns" : 			{
+				"kind" : "file",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Volumes/Seagate Backup Plus Drive/XboxRobotControls",
+					"projectrelativepath" : ".."
+				}
+
+			}
+,
+			"appicon.ico" : 			{
+				"kind" : "file",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Volumes/Seagate Backup Plus Drive/XboxRobotControls",
+					"projectrelativepath" : ".."
+				}
+
 			}
 
 		}

@@ -1,0 +1,26 @@
+{
+	"pattrstorage" : 	{
+		"name" : "controls",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"name" : "Xbox Controller (Bluetooth)",
+				"data" : 				{
+					"leftjoy" : [ 24 ],
+					"rightjoy" : [ 26 ],
+					"min" : [ 0 ],
+					"range" : [ 65535 ],
+					"invert" : [ 1 ],
+					"u066005740" : [ 0 ],
+					"button" : [ 7 ],
+					"speedlimit" : [ 0.800000011920929 ],
+					"deadzone" : [ 0.1 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
