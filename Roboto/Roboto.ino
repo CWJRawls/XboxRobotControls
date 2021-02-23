@@ -12,10 +12,15 @@
 #include <BridgeClient.h>
 //#include <YunServer.h>
 
+#define PACKETTRACK
+#define THROTTLE 10
+#define MAXPASSES 100
+
 BridgeUDP udp;
 int8_t leftVal = 0;
 int8_t rightVal = 0;
 bool buttonVal = false;
+uint8_t loopsSinceLast = 0;
 
 
 void setup() {
@@ -68,7 +73,10 @@ void loop() {
     buttonVal = (len > 27) ? ((buf[27]) ? true : false) : buttonVal; 
 
     free(buf);
-    
+
+    #ifdef PACKETTRACK
+    loopsSinceLast = 0;
+    #endif
   }
 
 /* Uncomment to dump current state via USB Serial into Arduino IDE
@@ -79,4 +87,17 @@ void loop() {
   Serial.print("\t");
   Serial.println(buttonVal);
 */
+
+  #ifdef PACKETTRACK
+
+  delay(THROTTLE);
+  loopsSinceLast++;
+
+  if(loopsSinceLast == MAXPASSES) {
+    leftVal = 0;
+    rightVal = 0;
+    buttonVal = false;
+  }
+
+  #endif
 }
