@@ -1,5 +1,6 @@
+
+
 /* All of the lovely Yun libraries */
-//#include <YunClient.h>
 #include <BridgeUdp.h>
 #include <Console.h>
 #include <Bridge.h>
@@ -10,23 +11,31 @@
 #include <FileIO.h>
 #include <Process.h>
 #include <BridgeClient.h>
-//#include <YunServer.h>
+#include <Servo.h>
 
-#define PACKETTRACK
-#define THROTTLE 10
-#define MAXPASSES 100
+#define ARMPIN 13
+#define SPEEDPIN 9
+#define TURNPIN 11
+
+#define CLEARBUFFER //clears excess data from buffer, comment out if undesired
 
 BridgeUDP udp;
-int8_t leftVal = 0;
-int8_t rightVal = 0;
+int speedVal = 0;
+int turnVal = 0;
 bool buttonVal = false;
 uint8_t loopsSinceLast = 0;
+Servo dir;
+Servo turns;
 
 
 void setup() {
-
-  Serial.begin(9600);
-  pinMode(13, OUTPUT);
+  
+  pinMode(8, OUTPUT);
+  pinMode(SPEEDPIN, OUTPUT);
+  pinMode(TURNPIN, OUTPUT);
+  pinMode(10, OUTPUT);
+  dir.attach(SPEEDPIN);
+  turns.attach(TURNPIN);
 
   //turn off built-in LED while establishing the bridge
   digitalWrite(13, LOW);
@@ -35,17 +44,20 @@ void setup() {
 
   udp.begin(8000);
 
+  pinMode(ARMPIN, OUTPUT);
+
   //turn the LED back on when done
   digitalWrite(13, HIGH);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   int packetSize = udp.parsePacket();
 
   if(packetSize) {
-    //Serial.print("Incoming Packet\t|\t");
+    
+    digitalWrite(13, HIGH); //turn on LED for network input
+    
     //create a container
     char* buf = (char*)malloc(sizeof(char) * 255);
 
@@ -56,48 +68,40 @@ void loop() {
       buf[len] = 0;
     }
 
-    /* Uncomment to see contents of incoming packets in the Arduino IDE Serial Monitor
-    Serial.print("Contents:\t");
-
-    for(int i = 0; i < len; i++) {
-      int8_t val = (int8_t)buf[i];
-      Serial.print(val);
-      Serial.print("\t");
+    if(len > 19) {
+      char* tmp = buf + 19; //grab the correct byte for the value in packet
+      speedVal = *tmp;
     }
 
-    Serial.println();
-    */
+    if(len > 23) { 
+      char* tmp = buf + 23; //grab the correct byte for the value in packet
+      turnVal = *tmp;
+    }
 
-    leftVal = (len > 19) ? (int8_t)buf[19] : leftVal; //only update when data received
-    rightVal = (len > 23) ? (int8_t)buf[23] : rightVal;
+    //if there is data for the button press, update the value
     buttonVal = (len > 27) ? ((buf[27]) ? true : false) : buttonVal; 
 
+    //get rid of the buffer when done
     free(buf);
 
-    #ifdef PACKETTRACK
-    loopsSinceLast = 0;
+    //check if there is more data in the network buffer and read it off
+    #ifdef CLEARBUFFER
+      if(udp.available() > 0) {
+        char* btemp = (char*) malloc(sizeof(char) * udp.available());
+        udp.read(btemp, udp.available();
+        free(btemp);
+      }
     #endif
+    
+    
+    digitalWrite(13, LOW); //turn LED off when done
   }
 
-/* Uncomment to dump current state via USB Serial into Arduino IDE
-  Serial.print("Current Values:\t");
-  Serial.print(leftVal);
-  Serial.print("\t");
-  Serial.print(rightVal);
-  Serial.print("\t");
-  Serial.println(buttonVal);
-*/
+  int l1 = map(speedVal, -127, 127, 1000, 2000);
+  int r = map(turnVal, -127, 127, 1000, 2000);
+  dir.writeMicroseconds(l1);
+  turns.writeMicroseconds(r);
+  digitalWrite(ARMPIN, (buttonVal) ? HIGH : LOW);
+  delay(1);
 
-  #ifdef PACKETTRACK
-
-  delay(THROTTLE);
-  loopsSinceLast++;
-
-  if(loopsSinceLast == MAXPASSES) {
-    leftVal = 0;
-    rightVal = 0;
-    buttonVal = false;
-  }
-
-  #endif
 }
