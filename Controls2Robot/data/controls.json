@@ -4,16 +4,17 @@
 		"slots" : 		{
 			"1" : 			{
 				"id" : 1,
-				"name" : "Xbox Controller",
+				"name" : "Xbox Controller (Left Joy)",
 				"data" : 				{
-					"leftjoy" : [ 24 ],
-					"rightjoy" : [ 26 ],
+					"leftjoy" : [ 34 ],
+					"rightjoy" : [ 33 ],
 					"min" : [ 0 ],
 					"range" : [ 65535 ],
 					"invert" : [ 1 ],
-					"button" : [ 7 ],
-					"speedlimit" : [ 0.800000011920929 ],
-					"deadzone" : [ 0.1 ]
+					"button" : [ 17 ],
+					"speedlimit" : [ 1.0 ],
+					"deadzone" : [ 0.1 ],
+					"invert_x" : [ 0 ]
 				}
 
 			}
@@ -29,7 +30,59 @@
 					"invert" : [ 1 ],
 					"button" : [ 2 ],
 					"speedlimit" : [ 1.0 ],
-					"deadzone" : [ 0.1 ]
+					"deadzone" : [ 0.1 ],
+					"invert_x" : [  ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"name" : "Xbox Controller (Right Joy)",
+				"data" : 				{
+					"leftjoy" : [ 36 ],
+					"rightjoy" : [ 35 ],
+					"min" : [ 0 ],
+					"range" : [ 65535 ],
+					"invert" : [ 1 ],
+					"button" : [ 17 ],
+					"speedlimit" : [ 1.0 ],
+					"deadzone" : [ 0.1 ],
+					"invert_x" : [ 0 ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"name" : "Logitech (Left Joy)",
+				"data" : 				{
+					"leftjoy" : [ 19 ],
+					"rightjoy" : [ 18 ],
+					"min" : [ 0 ],
+					"range" : [ 255 ],
+					"invert" : [ 1 ],
+					"button" : [ 7 ],
+					"speedlimit" : [ 1.0 ],
+					"deadzone" : [ 0.1 ],
+					"invert_x" : [ 0 ]
+				}
+
+			}
+,
+			"5" : 			{
+				"id" : 5,
+				"name" : "Logitech (Right Joy)",
+				"data" : 				{
+					"leftjoy" : [ 21 ],
+					"rightjoy" : [ 20 ],
+					"min" : [ 0 ],
+					"range" : [ 255 ],
+					"invert" : [ 1 ],
+					"button" : [ 7 ],
+					"speedlimit" : [ 1.0 ],
+					"deadzone" : [ 0.1 ],
+					"invert_x" : [ 0 ]
 				}
 
 			}
