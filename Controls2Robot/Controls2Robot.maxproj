@@ -2,8 +2,8 @@
 	"name" : "Controls2Robot",
 	"version" : 1,
 	"creationdate" : 3696502622,
-	"modificationdate" : 3696707136,
-	"viewrect" : [ 25.0, 79.0, 300.0, 500.0 ],
+	"modificationdate" : 3697394813,
+	"viewrect" : [ 227.0, 115.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -12,8 +12,26 @@
 		"patchers" : 		{
 			"main.maxpat" : 			{
 				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"Xbot.maxpat" : 			{
+				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+
+		}
+,
+		"media" : 		{
+			"appicon.png" : 			{
+				"kind" : "imagefile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "/Volumes/Seagate Backup Plus Drive/XboxRobotControls",
+					"projectrelativepath" : ".."
+				}
+
 			}
 
 		}
